@@ -6,6 +6,7 @@ body{
     font-family:'Plus Jakarta Sans', sans-serif;;
     margin: 0;
     padding: 0;
+    max-width: 1440px;
 }
 
 img{
@@ -25,6 +26,11 @@ p{
     font-weight: 500;
     font-size: 1.125rem;
     color: #7A746E;
+    line-height: 28px;
+}
+
+a,.button{
+    cursor: pointer;
 }
 
 
@@ -58,8 +64,26 @@ p{
     background-color: #030303;
 }
 
+.nav__button:hover{
+    transition: ease-in .2s;
+    background-color: #755CDE;
+}
+
+.nav__button:active{
+    background-color: #755CDE;
+}
+
 .red__button{
     background-color: #EB7565;
+}
+
+.red__button:hover{
+    background-color: #F6A560;
+    transition: ease-in .2s;
+}
+
+.red__button:active{
+    background-color: #F6A560;
 }
 
 
@@ -109,7 +133,7 @@ p{
     "photography photography"
     "motionGraphics motionGraphics"
     ;
-    gap: 25px 23px;
+    gap: 23px;
 }
 
 .services__graphics{
@@ -157,39 +181,16 @@ p{
     margin: 113px 0 37px 0;
 }
 
-.slider__img--wrapper{
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    justify-content: center;
-}
-
 .slider__img{
     border-radius: 15px;
     max-width: 270px;
+    height: 180px;
 }
-
-
-
-
-.slider__row{
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-.slider__arrow{
-    border: none;
-    background-color: #030303;
-    border-radius: 50%;
-    padding: 24px 25px;
-    margin: 32px 0 100px 0;
-}
-
 
 
 /*contact*/
 .contact{
+    margin-top: 132px;
     background-color: black;
     color: white;
     border-radius: 15px;
@@ -205,6 +206,141 @@ p{
     padding-bottom: 45px;
 }
 
+
 .footer{
     padding: 39px 0 32px 0;
+}
+
+@media (min-width:650px){
+    h1{
+        font-size: 2.75rem;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    .button{
+        padding: 15px 45px;
+        font-size: 1.125rem;
+    }
+    
+
+    /*nav*/
+    .nav__header{
+        margin:38px 0 80px 0;
+    }
+
+    .nav__logo{
+        width: 64px;
+        height: 64px;
+    }
+
+    /*header*/
+    .header__text--wrapper{
+        margin: 43px 0 67px 0;
+    }  
+
+    .services{
+        grid-template: 1fr 158px 1fr / 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "graphics graphics ui apps"
+        "graphics graphics illustrations illustrations"
+        "photography photography  motionGraphics motionGraphics"
+        ;
+        gap: 25px 23px;
+    }
+    
+    .introduction{
+        display: flex;
+        text-align: left;
+        padding: 120px 0 0 0;
+    }
+
+    .introduction__img{
+        margin: 30px 0 0 0;
+        min-height: 364px;
+        max-width: 364px;
+        transform: translateX(-80px);
+        overflow: hidden;
+    }
+    .introduction__text{
+        margin: 0 0 44px 0;
+    }
+
+    .column{
+        width: 50%;
+    }
+
+    .slider__img{
+        border-radius: 30px;
+        max-width: 540px;
+        height: 360px;
+    }
+
+    .contact{
+        padding-bottom: 83px;
+    }
+
+    .contact__title{
+        padding: 61px 0 39px 0;
+    }
+
+    .footer{
+        padding: 59px 0 60px 0;
+    }  
+}
+
+@media (min-width:1100px){
+    .container{
+        width: 80%;
+    }
+
+    h1{
+        font-size: 3.5rem;
+    }
+
+    h2{
+        font-size: 2.5rem;
+    }
+
+    .services{
+        grid-template: 1fr 158px/ repeat(6, 1fr);
+        grid-template-areas: 
+        "graphics graphics ui apps photography photography"
+        "graphics graphics illustrations illustrations motionGraphics motionGraphics"
+        ;
+        gap: 25px 23px;
+    }
+
+    .introduction__img{
+        transform: translateX(0);
+        max-width: 425px;
+        min-height: 410px;
+    }
+
+    .contact{
+        padding: 0;
+    }
+
+    .contact__card{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact__card.container{
+        width: 90%;
+    }
+
+    .contact__button{
+        align-self: center;
+        justify-content: center;
+        
+    }
+
+    .contact__text--wrapper{
+        text-align: left;
+        width: 50%;
+    }
+
 }
